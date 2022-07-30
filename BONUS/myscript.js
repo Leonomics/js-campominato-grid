@@ -27,12 +27,19 @@ function generaGriglia(dimensione, tabellone){
     val = getSelectedValue();
     if(val == "medium"){
         tabelloneEl.classList.add('medium');
+        tabelloneEl.classList.remove('hard');
+        tabelloneEl.classList.remove('easy');
         dimensione = 9;
 
     }else if(val == "hard"){
+        tabelloneEl.classList.remove('hard');
         tabelloneEl.classList.add('hard');
+        tabelloneEl.classList.remove('easy');  
         dimensione = 7;
     }else{
+        tabelloneEl.classList.remove('hard');
+        tabelloneEl.classList.add('easy');
+        tabelloneEl.classList.remove('medium');
         dimensione;
     }
     const numeroCelle = dimensione ** 2;
