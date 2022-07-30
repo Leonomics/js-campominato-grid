@@ -14,18 +14,26 @@ header{
     font-size: larger;
 }
 
+.buttons{
+    display: flex;
+}
+
 #play_button{
     height: fit-content;
     width: 121px;
 }
 
 .tabellone  {
+    visibility: hidden;
+    display: grid;
+    aspect-ratio: 1/1;
     max-width: 800px;
     flex-basis: 100%;
-    display: grid;
+    row-gap: 0px;
     grid-template-columns: repeat(10, 1fr);
     margin: 0 auto;
-    background-color: rgba(0,202,177, 1);
+    background-color: white;
+    
 }
 
 .square{
@@ -46,6 +54,10 @@ main{
     max-width: 1000px;
 
 }*/
+
+.square.clicked    {
+    background-color:  rgba(0,202,177, 1);
+}
 
 footer{
     display: flex;
