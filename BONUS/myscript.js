@@ -1,11 +1,12 @@
 let dimensioneGriglia = 10;
 let numeroCelle = dimensioneGriglia ** 2;
+let gridOn = false;
+//const mainEl = document.querySelector('.main');
 const tabelloneEl = document.querySelector('.tabellone');
 const playButtonEl = document.getElementById('play_button');
 /*const easyDifficulty = document.querySelectorAll('option[value="easy"]');
 const mediumDifficulty = document.querySelectorAll('option[value="medium"]');
 const hardDifficulty = document.querySelectorAll('option[value="hard"]');*/
-
 
 playButtonEl.addEventListener('click', showGrid);
 
@@ -18,13 +19,18 @@ function getSelectedValue() {
 function showGrid(){
     tabelloneEl.style.visibility = "visible";
     generaGriglia(dimensioneGriglia, tabelloneEl);
+    gridOn = true;
 }
 
 function generaGriglia(dimensione, tabellone){
+    tabellone.innerHTML = "";
     val = getSelectedValue();
     if(val == "medium"){
+        tabelloneEl.classList.add('medium');
         dimensione = 9;
+
     }else if(val == "hard"){
+        tabelloneEl.classList.add('hard');
         dimensione = 7;
     }else{
         dimensione;
@@ -38,10 +44,10 @@ function generaGriglia(dimensione, tabellone){
         //div.append(cella);
         tabellone.append(cella);    
     }
+}
 
     //return div.innerHTML;
 
-}
 
 
 function getSquareElement(){

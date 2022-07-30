@@ -36,6 +36,14 @@ header{
     
 }
 
+.medium{
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.hard{
+    grid-template-columns: repeat(7, 1fr);
+}
+
 .square{
     aspect-ratio: 1/1;
     display: flex;
